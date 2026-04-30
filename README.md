@@ -53,6 +53,8 @@ conda activate genDIReCT
 pip install ehtim
 ```
 
+Expected installation time: few minutes
+
 ## Quick Start
 
 ### Basic Usage
@@ -79,6 +81,8 @@ img = eh.image.load_fits('Images/s_sgra.fits')
 # Generate reconstruction
 model.image(img, N_images=1024, useObs=False)
 ```
+
+Expected runtime: few minutes
 
 
 ## Model Components

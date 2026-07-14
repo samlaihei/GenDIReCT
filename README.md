@@ -37,11 +37,11 @@ GenDIReCT employs a multi-stage architecture:
 ### Environment Setup
 Tested on Python 3.11.4.
 
-Model weights are tracked using Git Large File Storage (LFS). Prior to cloning the repository, ensure that Git LFS is installed and initialised in your system:
+Model weights and sample training data are tracked using Git Large File Storage (LFS). Prior to cloning the repository, ensure that Git LFS is installed and initialised in your system:
 ```bash
 git lfs install
 ```
-If Git LFS is not installed, the model weight files will appear as small pointer files instead of the actual data. 
+If Git LFS is not installed, these files will appear as small pointer files instead of the actual data. 
 
 1. Clone the repository:
 ```bash
@@ -93,6 +93,8 @@ model.image(img, N_images=1024, useObs=False)
 
 Expected runtime: few minutes
 
+### Model Training
+Refer to [example script](trainGenDIReCT_example.ipynb) for a simplified training script. Some example training data of basic geometric shapes is provided via Git LFS. 
 
 ## Model Components
 

@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 from torch.utils.data import Dataset, DataLoader
-import data.CI_torch_v2 as CI
+# import data.CI_torch_v2 as CI
 
 # Ignore warnings
 import warnings
@@ -22,11 +22,11 @@ class ImgDataset(Dataset):
             self.transform_list = transform_list
         self.imgs = [np.load(f) for f in self.filelist]
         print([len(i) for i in self.imgs])
-        self.closure = CI.Closure_Invariants(ehtarray=ehtarray, subarray=subarray,
-                                             date=date, ra=ra, dec=dec, bw_hz=bw_hz, psize=psize,
-                                             tint_sec=tint_sec, tadv_sec=tadv_sec, tstart_hr=tstart_hr, tstop_hr=tstop_hr,
-                                             uvfits_files=uvfits_files, ehtimAvg=ehtimAvg, avg_timescale=avg_timescale,
-                                             ci_mask=ci_mask, ttype=ttype)
+        # self.closure = CI.Closure_Invariants(ehtarray=ehtarray, subarray=subarray,
+        #                                      date=date, ra=ra, dec=dec, bw_hz=bw_hz, psize=psize,
+        #                                      tint_sec=tint_sec, tadv_sec=tadv_sec, tstart_hr=tstart_hr, tstop_hr=tstop_hr,
+        #                                      uvfits_files=uvfits_files, ehtimAvg=ehtimAvg, avg_timescale=avg_timescale,
+        #                                      ci_mask=ci_mask, ttype=ttype)
         
         
         # self.imgs = np.concatenate(self.imgs)

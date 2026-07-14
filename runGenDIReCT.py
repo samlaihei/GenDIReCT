@@ -150,7 +150,7 @@ class GenDIReCT():
 
     def runCNN(self, x, ci, ci_sigmas, interpFactor=1, psizeFactor=1, check_convergence=False, verbose=False):
         self.convmodel = ConvModel.ImageConv(x, ci, ci_sigmas, self.clObj, interpF=lambda x: x/x.max(), device=self.device, interpFactor=interpFactor, psizeFactor=psizeFactor).to(self.device)
-        self.convmodel.train(nepochs=1000, init_lr=1e-3, decay=0.999, verbose=verbose, loss_type='L1', weighting=True, loss_reduction='mean', optimiser='Adam', check_convergence=check_convergence, suppress_out=not verbose)
+        self.convmodel.train(nepochs=1000, init_lr=5e-4, decay=0.999, verbose=verbose, loss_type='L1', weighting=True, loss_reduction='mean', optimiser='Adam', check_convergence=check_convergence, suppress_out=not verbose)
         self.convmodel.train(nepochs=2000, init_lr=1e-4, decay=0.999, verbose=verbose, loss_type='L2', loss_reduction='sum', optimiser='Adam', check_convergence=check_convergence, suppress_out=not verbose)
         # self.convmodel.eval()
         return self.convmodel.train_images

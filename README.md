@@ -12,17 +12,17 @@ GenDIReCT combines generative machine learning techniques with closure invariant
 
 ### Key Features
 
-- **🔬 Closure Invariant Processing**: Utilizes closure invariants for robust image reconstruction
-- **🎯 Generative Models**: Implements diffusion models for high-quality image synthesis
-- **🌌 EHT-Optimized**: Designed for Event Horizon Telescope data and black hole imaging
-- **⚡ GPU Acceleration**: Full CUDA/MPS support for fast inference
+- **Closure Invariant Processing**: Utilizes closure invariants for robust image reconstruction
+- **Generative Models**: Implements conditional latent diffusion models for high-quality generative image synthesis
+- **EHT**: Designed for Event Horizon Telescope datasets
+- **GPU Acceleration**: CUDA/MPS support for fast inference
 
 ## Architecture
 
 GenDIReCT employs a multi-stage architecture:
 
 1. **Closure Invariant Computation**: Transforms interferometric data into closure invariants
-2. **Generative Model**: Uses diffusion models conditioned on closure invariants
+2. **Generative Model**: Uses latent diffusion models conditioned on closure invariants
 3. **Autoencoder**: Encoder-decoder architecture for latent space representation
 4. **Convolutional Refinement**: Final CNN-based refinement for high-quality output
 
@@ -35,6 +35,7 @@ GenDIReCT employs a multi-stage architecture:
 - CUDA (optional, for GPU acceleration)
 
 ### Environment Setup
+Tested on python==3.11.4.
 
 1. Clone the repository:
 ```bash
@@ -42,18 +43,21 @@ git clone https://github.com/samlaihei/GenDIReCT.git
 cd GenDIReCT
 ```
 
-2. Create conda environment:
+2. Create conda or virtual environment:
 ```bash
-conda env create -f environment.yml
-conda activate genDIReCT
+python -m venv .testenv
 ```
 
-3. Install additional dependencies:
+3. Install minimum dependencies:
 ```bash
-pip install ehtim
+pip install ehtim torch torchvision diffusers imagehash ipykernel
 ```
+Install the ClosureInvariants package: https://github.com/nithyanandan/ClosureInvariants.
 
 Expected installation time: few minutes
+
+### Model Weights
+Model weights are tracked via Git Large File Storage (LFS).
 
 ## Quick Start
 
@@ -96,10 +100,10 @@ The repository includes pre-trained models for:
 
 ## Dataset and Images
 
-The `Images/` directory contains reference images for various astronomical objects:
-- Black hole models (rings, crescents, disks)
-- EHT targets (Sgr A*, M87, Centaurus A)
-- Synthetic test cases (Gaussian, ellipse, point sources)
+The `Images/` directory contains reference images for various objects:
+- Geometric models (i.e. rings, crescents, disks)
+- Model EHT targets (i.e. Sgr A*, Centaurus A)
+- Einstein's face
 
 ## Citation
 

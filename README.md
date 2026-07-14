@@ -91,10 +91,12 @@ img = eh.image.load_fits('Images/s_sgra.fits')
 model.image(img, N_images=1024, useObs=False)
 ```
 
+See [script](runGenDIReCT.ipynb) for running GenDIReCT on observed EHT 2021 data on M87*.
+
 Expected runtime: few minutes
 
 ### Model Training
-Refer to [example script](trainGenDIReCT_example.ipynb) for a simplified training script. Some example training data of basic geometric shapes is provided via Git LFS. 
+Refer to [script](trainGenDIReCT_example.ipynb) for a simplified training script. Some example training data of basic geometric shapes is provided via Git LFS. 
 
 ## Model Components
 

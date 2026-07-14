@@ -35,7 +35,13 @@ GenDIReCT employs a multi-stage architecture:
 - CUDA (optional, for GPU acceleration)
 
 ### Environment Setup
-Tested on python==3.11.4.
+Tested on Python 3.11.4.
+
+Model weights are tracked using Git Large File Storage (LFS). Prior to cloning the repository, ensure that Git LFS is installed and initialised in your system:
+```bash
+git lfs install
+```
+If Git LFS is not installed, the model weight files will appear as small pointer files instead of the actual data. 
 
 1. Clone the repository:
 ```bash
@@ -46,6 +52,7 @@ cd GenDIReCT
 2. Create conda or virtual environment:
 ```bash
 python -m venv .testenv
+source .testenv/bin/activate
 ```
 
 3. Install minimum dependencies:
@@ -56,8 +63,6 @@ Install the ClosureInvariants package: https://github.com/nithyanandan/ClosureIn
 
 Expected installation time: few minutes
 
-### Model Weights
-Model weights are tracked via Git Large File Storage (LFS).
 
 ## Quick Start
 
